@@ -1,0 +1,63 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  padding: 20px 60px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Main Prescription Table */
+.table {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.prescription-row {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.prescription-row:hover {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+}
+
+.prescription-row:hover td {
+  background-color: #007bff; /* Blue background for individual cells */
+  color: white; /* White text */
+}
+
+/* Subtable Styling */
+.subtable-cell {
+  background-color: #f3f6f9;
+  padding: 20px;
+}
+
+.subtable-title {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+.subtable {
+  background-color: #eaf3fb;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.subtable th {
+  background-color: #d0e7f9;
+  color: #333;
+  font-weight: bold;
+}
+
+.subtable tr:hover {
+  background-color: #c2e0f7;
+  color: #333;
+}
