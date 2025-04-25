@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./appointmentStyle.css";
+import Navbar from "./Navbar";
 
 const Appointment = () => {
   const location = useLocation();
@@ -79,6 +80,8 @@ const Appointment = () => {
   };  
 
   return (
+    <>
+      <Navbar isLoggedIn={true} />
     <div className="container my-5">
       <h1 className="text-center mb-4">Scheduled Appointments</h1>
 
@@ -191,6 +194,7 @@ const Appointment = () => {
         </div>
       )}
     </div>
+  </>
   );
 };
 

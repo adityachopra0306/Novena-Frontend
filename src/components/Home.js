@@ -98,38 +98,61 @@ const Home = () => {
       </header>
 
       <section id="services" className="container-fluid my-5">
-        <h2 className="text-center mb-4">Our Services</h2>
-        <div className="row g-4">
-          {[
-            { img: "appointment.png", title: "Scheduled Appointments", desc: "View and schedule appointments with our specialists.", link: "/appointment" },
-            { img: "medication.png", title: "View Prescribed Medication", desc: "Access your prescribed medications securely.", link: "/prescription" },
-            { img: "doctor.png", title: "View Department Record", desc: "Get info about our medical staff in several departments.", link: "/staff" },
-            { img: "treatment.png", title: "Treatment Undergoing", desc: "Monitor your current treatments.", link: "/treatment" },
-            { img: "procedure.png", title: "Finances", desc: "Get your Financial Records associated with our clinics.", link: "/procedure" },
-            { img: "admit.png", title: "Admission Details", desc: "Find out about admission procedures.", link: "/admission" },
-          ].map((service, index) => (
-            <div className="col-md-4" key={index}>
-              <div className="card h-100">
-                <img src={`/images/${service.img}`} className="card-img-top" alt={service.title} />
-                <div className="card-body">
-                  <h5 className="card-title">{service.title}</h5>
-                  <p className="card-text">{service.desc}</p>
-
-                  {isLoggedIn ? ( 
-                   <Link
-  to={`${service.link}?userId=${userId}`}
-  className="btn btn-outline-primary"
->
-  Learn More
-</Link>
-                ) : (<button className="btn btn-outline-primary" onClick={handleShowLoginPopup}> Learn More</button>)
-                  }
-                </div>
-              </div>
-            </div>
-          ))}
+  <h2 className="text-center mb-4">Our Services</h2>
+  <div className="row g-4">
+    {[
+      { img: "appointment.png", title: "Scheduled Appointments", desc: "View and schedule appointments with our specialists.", link: "/appointment" },
+      { img: "medication.png", title: "View Prescribed Medication", desc: "Access your prescribed medications securely.", link: "/prescription" },
+      { img: "doctor.png", title: "View Department Record", desc: "Get info about our medical staff in several departments.", link: "/staff" },
+    ].map((service, index) => (
+      <div className="col-md-4" key={index}>
+        <div className="card h-100">
+          <img src={`/images/${service.img}`} className="card-img-top" alt={service.title} />
+          <div className="card-body">
+            <h5 className="card-title">{service.title}</h5>
+            <p className="card-text">{service.desc}</p>
+            {isLoggedIn ? (
+              <Link to={`${service.link}?userId=${userId}`} className="btn btn-outline-primary">
+                Learn More
+              </Link>
+            ) : (
+              <button className="btn btn-outline-primary" onClick={handleShowLoginPopup}>
+                Learn More
+              </button>
+            )}
+          </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+  <div className="row g-4 justify-content-center mt-3">
+    {[
+      { img: "procedure.png", title: "Finances", desc: "Get your Financial Records associated with our clinics.", link: "/finance" },
+      { img: "admit.png", title: "Admission Details", desc: "Check and Book Hospital admissions.", link: "/admission" },
+    ].map((service, index) => (
+      <div className="col-md-4" key={index}>
+        <div className="card h-100">
+          <img src={`/images/${service.img}`} className="card-img-top" alt={service.title} />
+          <div className="card-body">
+            <h5 className="card-title">{service.title}</h5>
+            <p className="card-text">{service.desc}</p>
+            {isLoggedIn ? (
+              <Link to={`${service.link}?userId=${userId}`} className="btn btn-outline-primary">
+                Learn More
+              </Link>
+            ) : (
+              <button className="btn btn-outline-primary" onClick={handleShowLoginPopup}>
+                Learn More
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       <footer className="bg-dark text-white text-center py-3 mt-5" id= "footer">
         <p>&copy; 2025 NOVENA | Demo Project</p>
